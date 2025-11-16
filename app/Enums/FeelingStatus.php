@@ -18,14 +18,14 @@ enum FeelingStatus: string implements HasLabel
     public function getLabel(): ?string
     {
         return match ($this) {
-            self::HAPPY => '😄 Senang',
-            self::SAD => '😢 Sedih',
-            self::ANGRY => '😠 Marah',
-            self::NEUTRAL => '😐 Biasa Saja',
-            self::CALM => '😌 Tenang',
-            self::EXCITED => '🤩 Bersemangat',
-            self::GRATEFUL => '🙏 Bersyukur',
-            self::TIRED => '😴 Lelah',
+            self::HAPPY => '😄 Happy',
+            self::SAD => '😢 Sad',
+            self::ANGRY => '😠 Angry',
+            self::NEUTRAL => '😐 Neutral',
+            self::CALM => '😌 Calm',
+            self::EXCITED => '🤩 Excited',
+            self::GRATEFUL => '🙏 Grateful',
+            self::TIRED => '😴 Tired',
         };
     }
 }
