@@ -2,8 +2,10 @@
 
 namespace App\Filament\Resources\Diaries\Schemas;
 
+use App\Enums\FeelingStatus;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Section;
@@ -29,9 +31,13 @@ class DiaryForm
                             ->native(false)
                             ->required()
                             ->default(now())
-                            ->placeholder('Entry diary at.'),
-                        TagsInput::make('tags')
+                            ->placeholder('Entry diary at.')
+                            ->columnSpan(1),
+                        Select::make('feeling_status')
+                            ->options(FeelingStatus::class)
+                            ->placeholder('Entry feeling.')
                             ->required()
+                            ->columnSpan(1)
                     ])
                     ->columnSpanFull()
                     ->columns(2)

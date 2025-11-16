@@ -8,4 +8,9 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateDiary extends CreateRecord
 {
     protected static string $resource = DiaryResource::class;
+    
+    protected function getRedirectUrl(): string
+    {
+        return static::getResource()::getUrl('index');
+    }
 }
