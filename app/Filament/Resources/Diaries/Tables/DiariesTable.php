@@ -18,11 +18,18 @@ class DiariesTable
     {
         return $table
             ->columns([
+                TextColumn::make('title')
+                    ->wrap()
+                    ->lineClamp(2),
                 TextColumn::make('content')
                     ->wrap()
                     ->lineClamp(2),
                 TextColumn::make('diary_at')
-                    ->date()
+                    ->date(),
+                TextColumn::make('feeling_status')
+                    ->badge()
+                    ->searchable()
+                    ->sortable()
             ])
             ->filters([
                 TrashedFilter::make(),

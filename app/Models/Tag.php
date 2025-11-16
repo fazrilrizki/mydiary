@@ -14,6 +14,6 @@ class Tag extends Model
 
     public function diaries(): BelongsToMany
     {
-        return $this->belongsToMany(Diary::class);
+        return $this->belongsToMany(Diary::class, 'diary_tags');
     }
 }
