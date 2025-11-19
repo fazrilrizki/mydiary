@@ -8,10 +8,14 @@ use Guava\Calendar\ValueObjects\CalendarEvent;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Diary extends Model implements Eventable
+class Diary extends Model implements Eventable, HasMedia
 {
-    use SoftDeletes;
+    use SoftDeletes, InteractsWithMedia;
+
+    public const MEDIA_COLLECTION_NAME = 'diary-image';
 
     protected $guarded = ['id', 'created_at', 'updated_at', 'deleted_at'];
 
