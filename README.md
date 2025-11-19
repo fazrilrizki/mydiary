@@ -79,5 +79,5 @@ Proyek ini dilisensikan di bawah MIT License. Lihat file LICENSE.md untuk detail
 KONTAK
 ------
 
-* Nama Anda - emailanda@example.com
+* Fazril Rizki Tanto Adji - fazrilrizkitantoadji@gmail.com
 * Link Proyek: https://github.com/fazrilrizki/mydiary
