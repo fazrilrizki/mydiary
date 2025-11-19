@@ -1,59 +1,83 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+MyDiary
+==================
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Sebuah aplikasi jurnal/diary pribadi yang aman, minimalis, dan modern. Proyek ini dibangun untuk menyediakan tempat pribadi bagi pengguna untuk mencatat pemikiran, perasaan, dan kenangan harian mereka.
 
-## About Laravel
+PERSYARATAN SISTEM
+------------------
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Sebelum Anda memulai, pastikan Anda telah menginstal hal-hal berikut di sistem Anda:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+* PHP (Versi yang direkomendasikan untuk versi Laravel Anda, misal: 8.1+)
+* Composer
+* MySQL atau database lain yang didukung Laravel
+* Node.js & npm (Jika Anda menggunakan Laravel Mix/Vite)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+INSTALASI LOKAL
+---------------
 
-## Learning Laravel
+Ikuti langkah-langkah di bawah ini untuk mengatur proyek secara lokal:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+1. Klon Repositori
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+   git clone https://github.com/fazrilrizki/mydiary.git
+   cd mydiary
 
-## Laravel Sponsors
+2. Instal Dependensi PHP
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+   Gunakan Composer untuk menginstal semua dependensi PHP yang diperlukan:
+   composer install
 
-### Premium Partners
+3. Konfigurasi Lingkungan
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+   * Duplikat file konfigurasi .env.example menjadi .env.
+     cp .env.example .env
 
-## Contributing
+   * Edit file .env dan atur detail koneksi database Anda (DB_DATABASE, DB_USERNAME, DB_PASSWORD, dll.).
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+4. Buat Kunci Aplikasi
 
-## Code of Conduct
+   Laravel membutuhkan kunci aplikasi unik.
+   php artisan key:generate
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+5. Migrasi dan Seeder Database
 
-## Security Vulnerabilities
+   Jalankan migrasi untuk membuat tabel di database Anda, dan jalankan seeder (jika ada) untuk mengisi data awal.
+   php artisan migrate --seed
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+   Catatan: Jika Anda tidak memiliki seeder, cukup jalankan php artisan migrate.
 
-## License
+6. Instal dan Kompilasi Aset Frontend (Opsional)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+   Jika proyek Anda menggunakan asset seperti CSS/JavaScript:
+   npm install
+   npm run dev
+
+7. Jalankan Server Lokal
+
+   Anda dapat menjalankan server pengembangan Laravel bawaan:
+   php artisan serve
+
+   Aplikasi sekarang harus dapat diakses di http://127.0.0.1:8000.
+
+KONTRIBUSI
+-----------
+
+Kontribusi disambut baik! Jika Anda memiliki saran atau menemukan bug, silakan buka issue baru atau kirim Pull Request (PR).
+
+1. Fork repositori ini.
+2. Buat branch fitur Anda (git checkout -b feature/NamaFiturBaru).
+3. Commit perubahan Anda (git commit -m 'Tambahkan Fitur Baru').
+4. Push ke branch (git push origin feature/NamaFiturBaru).
+5. Buka Pull Request baru.
+
+LISENSI
+-------
+
+Proyek ini dilisensikan di bawah MIT License. Lihat file LICENSE.md untuk detailnya.
+
+KONTAK
+------
+
+* Nama Anda - emailanda@example.com
+* Link Proyek: https://github.com/fazrilrizki/mydiary
